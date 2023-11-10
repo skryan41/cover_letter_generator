@@ -14,7 +14,7 @@ def create_cover_letter(details: dict) -> DocxTemplate:
     """
     doc = DocxTemplate(template_name)
     doc.render(details)
-    doc.save('Cover_letter_' + company_name + '_' + position_name.replace(' ', '_') + '.docx')
+    doc.save('Cover_letter_' + company_name.replace(' ', '_') + '_' + position_name.replace(' ', '_') + '.docx')
     return doc
 
 
@@ -53,4 +53,4 @@ if __name__ == "__main__":
 
     create_cover_letter(context)
     if to_convert == "Y":
-        convert('Cover_letter_' + company_name + '_' + position_name.replace(' ', '_') + '.docx')
+        convert('Cover_letter_' + company_name.replace(' ', '_') + '_' + position_name.replace(' ', '_') + '.docx')
